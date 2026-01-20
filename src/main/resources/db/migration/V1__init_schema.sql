@@ -1,0 +1,1 @@
+CREATE TABLE schema_test (id SERIAL PRIMARY KEY, status VARCHAR(255));
