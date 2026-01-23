@@ -3,6 +3,7 @@ package com.safestay.safe_stay_backend.controller;
 import com.safestay.safe_stay_backend.dto.UserRegistrationDTO;
 import com.safestay.safe_stay_backend.dto.UserResponseDTO;
 import com.safestay.safe_stay_backend.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public UserResponseDTO registerUser(@RequestBody UserRegistrationDTO registrationDTO) {
+    public UserResponseDTO registerUser(@Valid @RequestBody UserRegistrationDTO registrationDTO) {
         return userService.registerUser(registrationDTO);
     }
 }
